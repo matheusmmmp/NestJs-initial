@@ -1,0 +1,32 @@
+type Query {
+    Cats: [Cat]
+    Cat(id: ID!): Cat
+    filteredCates(Cat: CatQuery!): [Cat]
+  
+  }
+  
+  type Mutation {
+    createOrUpdateCat(Cat: CatInput!): Cat
+    delCat(id: ID!): Boolean
+  }
+  
+  type Cat {
+    id: Int
+    city: String
+    country: Country
+    createdAt: Date
+  }
+  
+  
+  input CatInput {
+    id: Int
+    city: String
+    country: CountryInput
+  }
+  
+  input CatQuery{
+    id: Int
+    city: String
+    country: Int
+  }
+  

@@ -1,0 +1,32 @@
+type Query {
+    Dogs: [Dog]
+    Dog(id: ID!): Dog
+    filteredDoges(Dog: DogQuery!): [Dog]
+  
+  }
+  
+  type Mutation {
+    createOrUpdateDog(Dog: DogInput!): Dog
+    delDog(id: ID!): Boolean
+  }
+  
+  type Dog {
+    id: Int
+    city: String
+    country: Country
+    createdAt: Date
+  }
+  
+  
+  input DogInput {
+    id: Int
+    city: String
+    country: CountryInput
+  }
+  
+  input DogQuery{
+    id: Int
+    city: String
+    country: Int
+  }
+  
